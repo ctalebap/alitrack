@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AliTrack - Automate AliExpress order collection and tracking. Export to CSV, manage multiple orders effortlessly.">
+    <title>AliTrack - AliExpress Order Tracker</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            text-align: center;
+            color: white;
+            padding: 3rem 0;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        header p {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            width: 128px;
+            height: 128px;
+            margin: 0 auto 2rem;
+            background: white;
+            border-radius: 20px;
+            padding: 1rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        main {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            margin-top: 2rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+
+        .section {
+            margin-bottom: 3rem;
+        }
+
+        .section h2 {
+            color: #667eea;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+
+        .section h3 {
+            color: #764ba2;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .feature-card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+
+        .feature-card h3 {
+            color: #667eea;
+            margin-top: 0;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .btn-primary {
+            background: #667eea;
+            color: white;
+        }
+
+        .btn-secondary {
+            background: #764ba2;
+            color: white;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: #667eea;
+            border: 2px solid #667eea;
+        }
+
+        .workflow {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-top: 1rem;
+        }
+
+        .workflow ol {
+            margin-left: 1.5rem;
+        }
+
+        .workflow li {
+            margin-bottom: 0.5rem;
+        }
+
+        footer {
+            text-align: center;
+            color: white;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+
+        .screenshot {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            margin: 1rem 0;
+        }
+
+        code {
+            background: #f4f4f4;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+
+        ul {
+            margin-left: 1.5rem;
+            margin-top: 0.5rem;
+        }
+
+        ul li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <img src="../logo-128.png" alt="AliTrack Logo">
+            </div>
+            <h1>AliTrack</h1>
+            <p>Automate AliExpress order collection and tracking. Export to CSV, manage multiple orders effortlessly.</p>
+        </header>
+
+        <main>
+            <section class="section">
+                <h2>What is AliTrack?</h2>
+                <p>AliTrack is a Chrome extension designed to automate the collection and tracking of AliExpress orders. The extension aggregates order details (product names, models, prices, order IDs, dates) and cross-references tracking information from individual tracking pages, presenting a consolidated table for easy analysis and export.</p>
+            </section>
+
+            <section class="section">
+                <h2>Key Features</h2>
+                <div class="features">
+                    <div class="feature-card">
+                        <h3>🚀 Automatic Collection</h3>
+                        <p>Automatically scrape order information from your AliExpress account without copy/pasting. Auto-scrolls to load all orders.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>📦 Track Shipments</h3>
+                        <p>Organize tracking numbers alongside order details in one place. Cross-reference tracking information seamlessly.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>💾 Data Persistence</h3>
+                        <p>Collected data survives page reloads and browser sessions via localStorage. Your data stays safe.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>📊 CSV Export</h3>
+                        <p>Export the final table to Google Sheets, Excel, or other spreadsheet tools for analysis. Multiple export formats available.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>🔒 Privacy First</h3>
+                        <p>All data remains on your machine. No server uploads, no third-party tracking. Complete privacy.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>⚡ Easy to Use</h3>
+                        <p>Simple interface with one-click collection. Filter, sort, and manage your orders with ease.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>How It Works</h2>
+                <div class="workflow">
+                    <ol>
+                        <li>Navigate to your <a href="https://www.aliexpress.com/p/order/index.html" target="_blank">AliExpress Orders page</a></li>
+                        <li>Click <strong>"Collect All Orders Data"</strong> button in the extension popup</li>
+                        <li>Wait for auto-scroll to complete and table to render</li>
+                        <li>Open each <strong>"Track"</strong> link in new tabs to extract tracking numbers</li>
+                        <li>The extension automatically extracts and saves tracking numbers with collection dates</li>
+                        <li>Export your data to CSV or copy to clipboard for use in Excel, Google Sheets, or other tools</li>
+                    </ol>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Use Cases</h2>
+                <ul>
+                    <li><strong>E-commerce resellers:</strong> Monitor multiple orders at once to manage customer fulfillment</li>
+                    <li><strong>Personal shoppers:</strong> Keep organized records of international purchases with tracking information</li>
+                    <li><strong>Logistics analysts:</strong> Aggregate shipping data for performance metrics and supplier evaluation</li>
+                    <li><strong>Data exporters:</strong> Maintain offline records of purchases for accounting, warranty, or archival purposes</li>
+                </ul>
+            </section>
+
+            <section class="section">
+                <h2>Installation</h2>
+                <h3>Chrome Extension</h3>
+                <p>Install AliTrack from the Chrome Web Store (or load as unpacked extension). Once installed, navigate to your AliExpress orders page to start using.</p>
+                
+                <h3>Requirements</h3>
+                <ul>
+                    <li>Chrome, Firefox, Edge, or Safari (with Tampermonkey or GreaseMonkey extension)</li>
+                    <li>JavaScript enabled</li>
+                    <li>AliExpress account (must be logged in to view your orders)</li>
+                    <li>Active internet connection</li>
+                </ul>
+            </section>
+
+            <section class="section">
+                <h2>Privacy & Security</h2>
+                <ul>
+                    <li><strong>No server uploads:</strong> All data remains on your machine in browser storage</li>
+                    <li><strong>No third-party tracking:</strong> Extension does not send data to external services</li>
+                    <li><strong>AliExpress only:</strong> Extension only runs on AliExpress domains and cannot access other websites</li>
+                    <li><strong>Manual control:</strong> You control when data is collected; no background automation sends data elsewhere</li>
+                </ul>
+            </section>
+
+            <section class="section">
+                <h2>Get Started</h2>
+                <div class="cta-buttons">
+                    <a href="#" class="btn btn-primary">Install from Chrome Web Store</a>
+                    <a href="https://github.com/yourusername/alix-script" class="btn btn-secondary" target="_blank">View on GitHub</a>
+                    <a href="https://alitrack.xyz" class="btn btn-outline" target="_blank">Visit Website</a>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 AliTrack. Not endorsed by AliExpress. Use at your own discretion.</p>
+            <p>Visit <a href="https://alitrack.xyz" style="color: white;" target="_blank">AliTrack.xyz</a> for updates and support.</p>
+        </footer>
+    </div>
+</body>
+</html>
