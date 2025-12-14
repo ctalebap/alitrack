@@ -24,8 +24,8 @@
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
-            color: #2E312D;
-            background: linear-gradient(135deg, #ECB23A 0%, #C78402 100%);
+            color: #2E312D; /* black bag */
+            background: linear-gradient(135deg, #ECB23A 0%, #C78402 100%); /* light cardboard to dark cardboard */
             min-height: 100vh;
         }
 
@@ -57,27 +57,30 @@
         .nav-menu {
             display: flex;
             justify-content: center;
-            gap: 1.5rem;
-            flex-wrap: wrap;
+            gap: 0.75rem;
+            flex-wrap: nowrap;
             margin-top: 2rem;
             padding: 1rem 0;
+            overflow-x: auto;
         }
 
         .nav-menu a {
-            color: white;
+            color: #2E312D; /* black bag */
+            background-color: rgba(255, 255, 255, 0.9); /* white with slight transparency */
             text-decoration: none;
-            font-size: 1rem;
+            font-size: 0.85rem;
             font-weight: 500;
-            padding: 0.5rem 1rem;
+            padding: 0.4rem 0.8rem;
             border-radius: 6px;
-            transition: background-color 0.2s, transform 0.2s;
-            opacity: 0.95;
+            transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
+            white-space: nowrap;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         .nav-menu a:hover {
-            background-color: rgba(255, 255, 255, 0.2);
+            background-color: white;
             transform: translateY(-2px);
-            opacity: 1;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
         }
 
         .logo {
@@ -97,7 +100,7 @@
         }
 
         main {
-            background: #E5E9ED;
+            background: #E5E9ED; /* light grey bag */
             border-radius: 20px;
             padding: 3rem;
             margin-top: 2rem;
@@ -109,13 +112,13 @@
         }
 
         .section h2 {
-            color: #2E312D;
+            color: #2E312D; /* black bag */
             margin-bottom: 1rem;
             font-size: 2rem;
         }
 
         .section h3 {
-            color: #2E312D;
+            color: #2E312D; /* black bag */
             margin-top: 1.5rem;
             margin-bottom: 0.5rem;
         }
@@ -131,11 +134,11 @@
             background: white;
             padding: 1.5rem;
             border-radius: 10px;
-            border-left: 4px solid #ECB23A;
+            border-left: 4px solid #ECB23A; /* light cardboard */
         }
 
         .feature-card h3 {
-            color: #2E312D;
+            color: #2E312D; /* black bag */
             margin-top: 0;
         }
 
@@ -165,30 +168,30 @@
         }
 
         .btn-primary {
-            background: #FE2751;
+            background: #FE2751; /* aliex red */
             color: white;
         }
 
         .btn-secondary {
-            background: #FAC507;
-            color: #2E312D;
+            background: #FAC507; /* envelope yellow */
+            color: #2E312D; /* black bag */
         }
 
         .btn-outline {
             background: transparent;
-            color: #C78402;
-            border: 2px solid #C78402;
+            color: #C78402; /* dark cardboard */
+            border: 2px solid #C78402; /* dark cardboard */
         }
 
         .workflow {
-            background: #E5E9ED;
+            background: #E5E9ED; /* light grey bag */
             padding: 2rem;
             border-radius: 10px;
             margin-top: 1rem;
         }
 
         .workflow a {
-            color: #FE2751;
+            color: #FE2751; /* aliex red */
             text-decoration: none;
         }
 
@@ -212,7 +215,7 @@
         }
 
         footer a {
-            color: #FAC507;
+            color: #FAC507; /* envelope yellow */
             text-decoration: none;
         }
 
@@ -228,7 +231,7 @@
         }
 
         code {
-            background: #E5E9ED;
+            background: #E5E9ED; /* light grey bag */
             padding: 0.2rem 0.4rem;
             border-radius: 4px;
             font-family: 'Courier New', monospace;
@@ -254,24 +257,25 @@
             <h1>AliTrack</h1>
             <p>Automate AliExpress order collection and tracking. Export to CSV, manage multiple orders effortlessly.</p>
             <nav class="nav-menu">
-                <a href="#what-is">What is AliTrack?</a>
-                <a href="#features">Key Features</a>
-                <a href="#how-it-works">How It Works</a>
-                <a href="#use-cases">Use Cases</a>
-                <a href="#installation">Installation</a>
-                <a href="#privacy">Privacy & Security</a>
-                <a href="#get-started">Get Started</a>
+                <a href="#what-is">❓ What is AliTrack?</a>
+                <a href="#features">✨ Key Features</a>
+                <a href="#how-it-works">⚙️ How It Works</a>
+                <a href="#use-cases">💼 Use Cases</a>
+                <a href="#installation">📥 Installation</a>
+                <a href="#privacy">🔒 Privacy & Security</a>
+                <a href="#get-started">🚀 Get Started</a>
+                <a href="#support">💬 Support</a>
             </nav>
         </header>
 
         <main>
             <section id="what-is" class="section">
-                <h2>What is AliTrack?</h2>
+                <h2>❓ What is AliTrack?</h2>
                 <p>AliTrack is a Chrome extension designed to automate the collection and tracking of AliExpress orders. The extension aggregates order details (product names, models, prices, order IDs, dates) and cross-references tracking information from individual tracking pages, presenting a consolidated table for easy analysis and export.</p>
             </section>
 
             <section id="features" class="section">
-                <h2>Key Features</h2>
+                <h2>✨ Key Features</h2>
                 <div class="features">
                     <div class="feature-card">
                         <h3>🚀 Automatic Collection</h3>
@@ -301,7 +305,7 @@
             </section>
 
             <section id="how-it-works" class="section">
-                <h2>How It Works</h2>
+                <h2>⚙️ How It Works</h2>
                 <div class="workflow">
                     <ol>
                         <li>Navigate to your <a href="https://www.aliexpress.com/p/order/index.html" target="_blank">AliExpress Orders page</a></li>
@@ -315,7 +319,7 @@
             </section>
 
             <section id="use-cases" class="section">
-                <h2>Use Cases</h2>
+                <h2>💼 Use Cases</h2>
                 <ul>
                     <li><strong>E-commerce resellers:</strong> Monitor multiple orders at once to manage customer fulfillment</li>
                     <li><strong>Personal shoppers:</strong> Keep organized records of international purchases with tracking information</li>
@@ -325,7 +329,7 @@
             </section>
 
             <section id="installation" class="section">
-                <h2>Installation</h2>
+                <h2>📥 Installation</h2>
                 <h3>Chrome Extension</h3>
                 <p>Install AliTrack from the Chrome Web Store (or load as unpacked extension). Once installed, navigate to your AliExpress orders page to start using.</p>
                 
@@ -339,7 +343,7 @@
             </section>
 
             <section id="privacy" class="section">
-                <h2>Privacy & Security</h2>
+                <h2>🔒 Privacy & Security</h2>
                 <ul>
                     <li><strong>No server uploads:</strong> All data remains on your machine in browser storage</li>
                     <li><strong>No third-party tracking:</strong> Extension does not send data to external services</li>
@@ -349,11 +353,19 @@
             </section>
 
             <section id="get-started" class="section">
-                <h2>Get Started</h2>
+                <h2>🚀 Get Started</h2>
                 <div class="cta-buttons">
                     <a href="#" class="btn btn-primary">Install from Chrome Web Store</a>
                     <a href="https://github.com/yourusername/alix-script" class="btn btn-secondary" target="_blank">View on GitHub</a>
                     <a href="https://alitrack.xyz" class="btn btn-outline" target="_blank">Visit Website</a>
+                </div>
+            </section>
+
+            <section id="support" class="section">
+                <h2>💬 Support</h2>
+                <p>Have questions, need help, or want to share feedback? Join our community discussions on GitHub!</p>
+                <div class="cta-buttons">
+                    <a href="https://github.com/ctalebap/alitrack/discussions" class="btn btn-primary" target="_blank">Join Discussions</a>
                 </div>
             </section>
         </main>
