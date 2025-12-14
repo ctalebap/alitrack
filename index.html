@@ -17,6 +17,10 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
@@ -48,6 +52,32 @@
             opacity: 0.9;
             max-width: 600px;
             margin: 0 auto;
+        }
+
+        .nav-menu {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+            padding: 1rem 0;
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            transition: background-color 0.2s, transform 0.2s;
+            opacity: 0.95;
+        }
+
+        .nav-menu a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+            opacity: 1;
         }
 
         .logo {
@@ -223,15 +253,24 @@
             </div>
             <h1>AliTrack</h1>
             <p>Automate AliExpress order collection and tracking. Export to CSV, manage multiple orders effortlessly.</p>
+            <nav class="nav-menu">
+                <a href="#what-is">What is AliTrack?</a>
+                <a href="#features">Key Features</a>
+                <a href="#how-it-works">How It Works</a>
+                <a href="#use-cases">Use Cases</a>
+                <a href="#installation">Installation</a>
+                <a href="#privacy">Privacy & Security</a>
+                <a href="#get-started">Get Started</a>
+            </nav>
         </header>
 
         <main>
-            <section class="section">
+            <section id="what-is" class="section">
                 <h2>What is AliTrack?</h2>
                 <p>AliTrack is a Chrome extension designed to automate the collection and tracking of AliExpress orders. The extension aggregates order details (product names, models, prices, order IDs, dates) and cross-references tracking information from individual tracking pages, presenting a consolidated table for easy analysis and export.</p>
             </section>
 
-            <section class="section">
+            <section id="features" class="section">
                 <h2>Key Features</h2>
                 <div class="features">
                     <div class="feature-card">
@@ -261,7 +300,7 @@
                 </div>
             </section>
 
-            <section class="section">
+            <section id="how-it-works" class="section">
                 <h2>How It Works</h2>
                 <div class="workflow">
                     <ol>
@@ -275,7 +314,7 @@
                 </div>
             </section>
 
-            <section class="section">
+            <section id="use-cases" class="section">
                 <h2>Use Cases</h2>
                 <ul>
                     <li><strong>E-commerce resellers:</strong> Monitor multiple orders at once to manage customer fulfillment</li>
@@ -285,7 +324,7 @@
                 </ul>
             </section>
 
-            <section class="section">
+            <section id="installation" class="section">
                 <h2>Installation</h2>
                 <h3>Chrome Extension</h3>
                 <p>Install AliTrack from the Chrome Web Store (or load as unpacked extension). Once installed, navigate to your AliExpress orders page to start using.</p>
@@ -299,7 +338,7 @@
                 </ul>
             </section>
 
-            <section class="section">
+            <section id="privacy" class="section">
                 <h2>Privacy & Security</h2>
                 <ul>
                     <li><strong>No server uploads:</strong> All data remains on your machine in browser storage</li>
@@ -309,7 +348,7 @@
                 </ul>
             </section>
 
-            <section class="section">
+            <section id="get-started" class="section">
                 <h2>Get Started</h2>
                 <div class="cta-buttons">
                     <a href="#" class="btn btn-primary">Install from Chrome Web Store</a>
